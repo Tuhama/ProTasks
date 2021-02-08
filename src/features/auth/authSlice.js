@@ -19,6 +19,7 @@ export const authSlice = createSlice({
   reducers: {
     initialLoadStart(state) {
       state.loading = true;
+      state.isActivated = false;
     },
     initialLoadSuccess(state) {
       state.loading = false;

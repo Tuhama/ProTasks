@@ -9,19 +9,22 @@ import { N_PATHS } from "../constants/routes";
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   const { isActivated, loading } = useSelector((state) => state.auth);
 
-  function showNotification() {
+  const showNotification = useCallback(() => {
     notification["warning"]({
       message: "Giga Notify",
       description: "you are not authorized to access this page",
     });
-  }
+  }, []);
+
+  useEffect(() => {
+    if (!loading && !isActivated) {
+      showNotification();
+    }
+  }, [isActivated, loading, showNotification]);
 
   if (isActivated)
     //check if route is in group of routes
     return <Route rest component={Component} />;
-  else {
-    showNotification();
-    return <Redirect to={N_PATHS.Login} />;
-  }
+  else return <Redirect to={N_PATHS.Login} />;
 };
 export default ProtectedRoute;

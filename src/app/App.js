@@ -18,20 +18,14 @@ import MainView from "../views/mainView/MainView";
 
 import { N_PATHS } from "../constants/routes";
 import LoadingIndicator from "../components/loadingIndicator";
+
 function App() {
   const dispatch = useDispatch();
-  const history = useHistory();
-  let location = useLocation();
+  const { loading } = useSelector((state) => state.auth);
 
-  const { isActivated, loading } = useSelector((state) => state.auth);
-
-  //if user is logged in then he will be redirected to Inventory
   useEffect(() => {
     dispatch(initialLoadThunk());
-
-    if (isActivated && !location.pathname.startsWith(N_PATHS.Inventory))
-      history.push(N_PATHS.Inventory);
-  }, [isActivated, history, dispatch, location.pathname]);
+  }, []);
 
   return (
     <div className="App">
