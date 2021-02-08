@@ -1,0 +1,32 @@
+@import '~antd/dist/antd.dark.css';
+.app{
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+  font-size: 12px;
+}
+.form-button {
+  width: fit-content;
+  margin-left: 50%;
+}
+
+.form-container {
+  margin: 40px auto 0;
+  border: 1px solid blue !important;
+  padding: 40px;
+  border-radius: 16px;
+}
+.form input {
+  margin-bottom: 3px;
+}
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
