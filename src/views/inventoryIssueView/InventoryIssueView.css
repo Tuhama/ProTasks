@@ -1,11 +1,38 @@
+
+.inventory-header{
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.inventory-btn-panel{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+}
+
+.issue-container{
+    width: 98vw;
+    display:grid;
+    grid-gap: 5px;
+    grid-template-areas: 'filterArea detailsArea detailsArea detailsArea'
+                         'tableArea detailsArea detailsArea detailsArea'
+                        'tableArea detailsArea detailsArea detailsArea'
+                        'tableArea detailsArea detailsArea detailsArea';
+}
 .filter-container{
-    margin: 5px;
+    grid-area: filterArea;
+}
+.table-container{
+    width: calc(25vw);
+    grid-area: tableArea;
+}
+.details-container{
+    grid-area: detailsArea;
 }
 
 .card-container{
     margin: 5px;
-    height: 100%;
-    width: 100%;
 }
 .card-container p {
     margin: 0;
@@ -34,7 +61,6 @@
 }
 
 .ant-table-thead > tr >th{
-    height: 40px;
     color: white;
     background: #3071b9 !important;
 }
@@ -55,4 +81,10 @@
 
 #issue-form .ant-row .ant-form-item{
 margin-bottom: 5px;
+}
+.selected-row{
+    background-color: #3071b9;
+}
+.ant-table-tbody>.selected-row:hover>td{
+    background-color: #3071b9;
 }

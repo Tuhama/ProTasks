@@ -7,27 +7,34 @@ export const inventoryTableColumns = [
   {
     title: "Document Date",
     dataIndex: "documentdate",
+    render: (text, record, index) => text.slice(2).replace(/-/g, "/"),
     key: "documentdate",
+    width: "100px",
   },
   {
     title: "User Reference",
     dataIndex: "userreference",
     key: "userreference",
+    width: "150px",
   },
   {
     title: "posted",
     dataIndex: "posted",
+    render: (text, record, index) => text.toString(),
     key: "posted",
+    width: "50px",
   },
   {
     title: "Status",
     dataIndex: "status",
     key: "status",
+    width: "50px",
   },
   {
     title: "Remarks",
     dataIndex: "remarks",
     key: "remarks",
+    width: "100px",
   },
 ];
 
@@ -96,5 +103,57 @@ export const inventoryDetailsTableColumns = [
     title: "Amount",
     dataIndex: "",
     key: "",
+    width: "150px",
+  },
+];
+
+export const resourceCategoriesTableColumns = [
+  {
+    title: "",
+    className: "table-first-column",
+    width: "20px",
+  },
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+    width: "200px",
+  },
+  {
+    title: "Description",
+    dataIndex: "description",
+    key: "description",
+    width: "150px",
+  },
+];
+export const resourcesTableColumns = [
+  {
+    title: "",
+    className: "table-first-column",
+    width: "20px",
+  },
+  {
+    title: "Serial Number",
+    dataIndex: "serialnumber",
+    key: "serialnumber",
+    width: "150px",
+  },
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+    width: "200px",
+  },
+  {
+    title: "Description",
+    dataIndex: "description",
+    key: "description",
+    width: "100px",
+  },
+  {
+    title: "Code",
+    dataIndex: "code",
+    key: "code",
+    width: "75px",
   },
 ];
